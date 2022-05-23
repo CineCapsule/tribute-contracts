@@ -47,6 +47,18 @@ module.exports = {
       chainId: 4,
       skipDryRun: true,
     },
+    fuse: {
+      provider: getNetworkProvider,
+      network_id: 122,
+      gasPrice: 1000000000,
+      skipDryRun: true,
+    },
+    fusetest: {
+      provider: getNetworkProvider,
+      network_id: 123,
+      gasPrice: 1000000000,
+      skipDryRun: true,
+    },
     mainnet: {
       provider: getNetworkProvider,
       network_id: 1,
