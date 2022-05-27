@@ -86,31 +86,31 @@ services:
   #     POSTGRES_PASSWORD: pwd123
   #     POSTGRES_DB: graph-db
 
-  # The Tribute UI React App
-  trib-ui:
-    # tribute-ui@v2.1.0 integrated with v2.3.5
-    image: openlaw/tribute-ui:main-6272c48a
-    container_name: trib-ui
-    ports:
-      - "3000:3000"
-    command: ["npm", "start"]
-    depends_on:
-      - trib-snapshot-hub
-    env_file:
-      - ../.env
-    environment:
-      # Do not change it.
-      # The url of the subgraph running locally in a container.
-      REACT_APP_GRAPH_API_URL: "http://localhost:8000/subgraphs/name/openlawteam/tribute"
+#   # The Tribute UI React App
+#   trib-ui:
+#     # tribute-ui@v2.1.0 integrated with v2.3.5
+#     image: openlaw/tribute-ui:main-6272c48a
+#     container_name: trib-ui
+#     ports:
+#       - "3000:3000"
+#     command: ["npm", "start"]
+#     depends_on:
+#       - trib-snapshot-hub
+#     env_file:
+#       - ../.env
+#     environment:
+#       # Do not change it.
+#       # The url of the subgraph running locally in a container.
+#       REACT_APP_GRAPH_API_URL: "http://localhost:8000/subgraphs/name/openlawteam/tribute"
 
-      # Do not change it.
-      # The url of snaphot-hub running locally in a container.
-      REACT_APP_SNAPSHOT_HUB_API_URL: "http://localhost:9090"
+#       # Do not change it.
+#       # The url of snaphot-hub running locally in a container.
+#       REACT_APP_SNAPSHOT_HUB_API_URL: "http://localhost:9090"
 
-      # Do not change it.
-      # The unique name registered in Snapshot Hub under which proposals, votes, etc. will be stored.
-      REACT_APP_SNAPSHOT_SPACE: "tribute"
+#       # Do not change it.
+#       # The unique name registered in Snapshot Hub under which proposals, votes, etc. will be stored.
+#       REACT_APP_SNAPSHOT_SPACE: "tribute"
 
-networks:
-  default:
-    name: trib-network
+# networks:
+#   default:
+#     name: trib-network
